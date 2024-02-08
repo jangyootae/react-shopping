@@ -19,12 +19,11 @@ const Banner = () => {
     <div>
       <Top>
         <div className="ban">
-        <button onClick={handleMain}>홈피</button>    
+        <CateButton onClick={handleMain}>홈페이지</CateButton>    
         </div>
         <div className="ban">
-          <button onClick={handleBasket}>장바구니</button>
-          <button>개인정보</button>
-          <button onClick={handleLogout}>{isAuth ? "로그아웃" : "로그인"}</button>
+          <CateButton onClick={handleBasket}>장바구니</CateButton>
+          <CateButton onClick={handleLogout}>{isAuth ? "로그아웃" : "로그인"}</CateButton>
         </div>
     </Top>
     <Outlet />
@@ -36,11 +35,24 @@ const Top = styled.div`
 display: flex;
 justify-content: space-between;
 height: 100%;
-.ban {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+box-shadow: 5px 5px 5px lightgray;
 `;
+const CateButton = styled.button`
+    width: auto;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px 40px;
+    font-weight: 500;
+    font-size: 15px;
+    background: #fff;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    border-radius: 4px;
 
+    &:hover {
+        color: #fff;
+        background: gray;
+    }
+`;
 export default Banner;
